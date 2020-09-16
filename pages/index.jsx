@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import {useCallback, useEffect, useState} from 'react'
+import {format} from 'date-fns'
 
 const links = [
   {text: 'Gmail', url: 'https://mail.google.com', color: 'text-red-600'},
@@ -10,17 +11,17 @@ const links = [
 ]
 
 export default function Home() {
+  const [currentDay, setCurrentDay] = useState('')
   const [currentTime, setCurrentTime] = useState('')
-  const updateTime = useCallback(() => {
-    const now = new Date()
-    const hours = now.getHours().toString().padStart(2, '0')
-    const minutes = now.getMinutes().toString().padStart(2, '0')
-    setCurrentTime(`${hours}:${minutes}`)
+
+  const update = useCallback(() => {
+    setCurrentDay(format(new Date(), 'd LLLL'))
+    setCurrentTime(format(new Date(), 'HH:mm'))
   }, [])
 
   useEffect(() => {
-    updateTime()
-    const interval = setInterval(updateTime, 1000)
+    update()
+    const interval = setInterval(update, 1000)
     return () => clearInterval(interval)
   }, [])
 
@@ -32,9 +33,10 @@ export default function Home() {
       </Head>
 
       <div className="flex items-center justify-center w-screen h-screen">
-        <div className="flex flex-col items-center -mt-16 space-y-12">
+        <div className="flex flex-col items-center -mt-32">
           <h1 className="font-black text-8xl">{currentTime ? currentTime : <>&nbsp;</>}</h1>
-          <div className="grid grid-flow-col gap-8 font-semibold">
+          <h2 className="mt-2 text-xl font-black">{currentDay ? currentDay : <>&nbsp;</>}</h2>
+          <div className="grid grid-flow-col gap-8 mt-16 font-semibold">
             {links.map((link) => (
               <a href={link.url} key={link.text} className={link.color}>
                 {link.text}
