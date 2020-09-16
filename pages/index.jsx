@@ -31,10 +31,10 @@ export default function Home() {
 
       <div className="flex items-center justify-center w-screen h-screen">
         <div className="flex flex-col items-center -mt-16 space-y-12">
-          <h1 className="font-black text-8xl">{currentTime}</h1>
+          <h1 className="font-black text-8xl">{currentTime ? currentTime : <>&nbsp;</>}</h1>
           <div className="grid grid-flow-col gap-8 font-semibold">
             {links.map((link) => (
-              <a href={link.url} className={link.color}>
+              <a href={link.url} key={link.text} className={link.color}>
                 {link.text}
               </a>
             ))}
