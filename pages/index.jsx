@@ -13,7 +13,9 @@ export default function Home() {
   const [currentTime, setCurrentTime] = useState('')
   const updateTime = useCallback(() => {
     const now = new Date()
-    setCurrentTime(`${now.getHours()}:${now.getMinutes()}`)
+    const hours = now.getHours().toString().padStart(2, '0')
+    const minutes = now.getMinutes().toString().padStart(2, '0')
+    setCurrentTime(`${hours}:${minutes}`)
   }, [])
 
   useEffect(() => {
