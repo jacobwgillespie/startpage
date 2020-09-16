@@ -5,7 +5,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* purgecss start ignore */
 html {
   background: url(/background.jpg) no-repeat center center fixed;
   background-size: cover;
 }
+/* purgecss end ignore */
