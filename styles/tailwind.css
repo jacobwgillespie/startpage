@@ -6,5 +6,6 @@
 @import 'tailwindcss/utilities';
 
 html {
-  background-color: theme('colors.gray.100');
+  background: url(/background.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
