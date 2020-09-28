@@ -3,11 +3,11 @@ import {useCallback, useEffect, useState} from 'react'
 import {format} from 'date-fns'
 
 const links = [
-  {text: 'Gmail', url: 'https://mail.google.com', color: 'text-red-600'},
-  {text: 'GitHub', url: 'https://github.com', color: 'text-black'},
-  {text: 'Feedbin', url: 'https://feedbin.com/', color: 'text-green-600'},
-  {text: 'Twitch', url: 'https://twitch.tv', color: 'text-purple-600'},
-  {text: 'AWS', url: 'http://console.aws.amazon.com/console/home', color: 'text-orange-600'},
+  {text: 'Gmail', url: 'https://mail.google.com'},
+  {text: 'GitHub', url: 'https://github.com'},
+  {text: 'Feedbin', url: 'https://feedbin.com/'},
+  {text: 'Twitch', url: 'https://twitch.tv'},
+  {text: 'AWS', url: 'http://console.aws.amazon.com/console/home'},
 ]
 
 export default function Home() {
@@ -38,7 +38,7 @@ export default function Home() {
           <h2 className="mt-2 text-xl font-black">{currentDay ? currentDay : <>&nbsp;</>}</h2>
           <div className="grid grid-flow-col gap-8 mt-16 font-semibold">
             {links.map((link) => (
-              <a href={link.url} key={link.text} className={link.color}>
+              <a href={link.url} key={link.text}>
                 {link.text}
               </a>
             ))}
