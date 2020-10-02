@@ -3,10 +3,8 @@ import {useCallback, useEffect, useState} from 'react'
 import {format} from 'date-fns'
 
 const links = [
-  {text: 'Gmail', url: 'https://mail.google.com'},
   {text: 'GitHub', url: 'https://github.com'},
   {text: 'Feedbin', url: 'https://feedbin.com/'},
-  {text: 'Twitch', url: 'https://twitch.tv'},
   {text: 'AWS', url: 'http://console.aws.amazon.com/console/home'},
 ]
 
