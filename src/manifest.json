@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "startpage",
+  "short_name": "startpage",
+  "description": "Custom start page",
+  "version": "1.0.0",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "icons": {
+    "512": "icons/512.png",
+    "128": "icons/128.png",
+    "16": "icons/16.png"
+  },
+  "minimum_chrome_version": "22"
+}
