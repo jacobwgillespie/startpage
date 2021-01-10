@@ -1,12 +1,9 @@
 import Head from 'next/head'
 import {useCallback, useEffect, useState} from 'react'
 import {format} from 'date-fns'
+import cx from 'classnames'
 
-const links = [
-  {text: 'GitHub', url: 'https://github.com'},
-  {text: 'Feedbin', url: 'https://feedbin.com/'},
-  {text: 'AWS', url: 'http://console.aws.amazon.com/console/home'},
-]
+const Link = ({className, ...rest}) => <a className={cx('inline-block hover:text-black', className)} {...rest} />
 
 export default function Home() {
   const [currentDay, setCurrentDay] = useState('')
@@ -34,12 +31,10 @@ export default function Home() {
         <div className="flex flex-col items-center -mt-32">
           <h1 className="font-black text-8xl">{currentTime ? currentTime : <>&nbsp;</>}</h1>
           <h2 className="mt-2 text-xl font-black">{currentDay ? currentDay : <>&nbsp;</>}</h2>
-          <div className="grid grid-flow-col gap-8 mt-16 font-semibold">
-            {links.map((link) => (
-              <a href={link.url} key={link.text}>
-                {link.text}
-              </a>
-            ))}
+          <div className="grid grid-cols-3 gap-8 mt-16 font-semibold text-center text-gray-300">
+            <Link href="https://github.com">GitHub</Link>
+            <Link href="https://feedbin.com/">Feedbin</Link>
+            <Link href="https://www.theguardian.com/uk">Guardian</Link>
           </div>
         </div>
       </div>
