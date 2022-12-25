@@ -1,25 +1,19 @@
-<img src="src/icons/logo.png" align="right" width="150" />
+<img src="public/icons/logo.png" align="right" width="150" />
 
 # startpage
 
-Custom Chrome / Edge new tab page extension. ✨
+New tab page. ✨
 
 ## Development
 
 Dev server:
 
 ```shell
-$ yarn dev
+$ pnpm dev
 ```
 
 Building:
 
 ```shell
-$ yarn build
-```
-
-Packaging:
-
-```shell
-$ zip extension.zip build/*
+$ pnpm build
 ```

@@ -1,0 +1,26 @@
+---
+export interface Props {
+  title: string
+}
+
+const {title} = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="New Tab Page" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  html {
+    background: url(/background.webp) no-repeat center center fixed;
+    background-size: cover;
+  }
+</style>

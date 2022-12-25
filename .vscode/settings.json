@@ -1,0 +1,15 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.lintTask.enable": true,
+  "eslint.lintTask.options": "--cache --cache-location node_modules/.cache/.eslintcache .",
+  "eslint.validate": ["javascript", "javascriptreact", "astro", "typescript", "typescriptreact"],
+
+  "prettier.prettierPath": "node_modules/.bin/prettier",
+  "prettier.documentSelectors": ["**/*.astro"],
+
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
