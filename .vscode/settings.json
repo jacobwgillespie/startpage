@@ -1,12 +1,5 @@
 {
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
-  "eslint.lintTask.enable": true,
-  "eslint.lintTask.options": "--cache --cache-location node_modules/.cache/.eslintcache .",
-  "eslint.validate": ["javascript", "javascriptreact", "astro", "typescript", "typescriptreact"],
-
-  "prettier.prettierPath": "node_modules/.bin/prettier",
+  "prettier.prettierPath": "node_modules/prettier/index.cjs",
   "prettier.documentSelectors": ["**/*.astro"],
 
   "[astro]": {
