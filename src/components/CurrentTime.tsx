@@ -17,8 +17,8 @@ export function CurrentTime() {
 
   return (
     <>
-      <h1 className="text-8xl font-black">{currentTime}</h1>
-      <h2 className="mt-2 text-xl font-black">{currentDay}</h2>
+      <h1 className="text-8xl font-black" suppressHydrationWarning>{currentTime}</h1>
+      <h2 className="mt-2 text-xl font-black" suppressHydrationWarning>{currentDay}</h2>
     </>
   )
 }
