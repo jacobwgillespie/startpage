@@ -1,13 +1,14 @@
 import cloudflare from '@astrojs/cloudflare'
 import react from '@astrojs/react'
-import tailwind from '@astrojs/tailwind'
+import tailwindcss from '@tailwindcss/vite'
 import {defineConfig} from 'astro/config'
 
 export default defineConfig({
   output: 'server',
-  integrations: [tailwind(), react()],
-  adapter: cloudflare(),
+  integrations: [react()],
+  adapter: cloudflare({imageService: 'compile'}),
   vite: {
+    plugins: [tailwindcss()],
     resolve: {
       alias: import.meta.env.PROD && {
         'react-dom/server': 'react-dom/server.edge',
